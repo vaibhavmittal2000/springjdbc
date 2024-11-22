@@ -13,12 +13,20 @@ public class App {
         ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
         StudentDao studentDao = context.getBean("studentDao",StudentDao.class);
         
-        Student student = new Student();
-        student.setId(302);
-        student.setName("Vivek");
-        student.setCity("Rohtak");
+//        Student student = new Student();
+//        student.setId(302);
+//        student.setName("Vivek");
+//        student.setCity("Rohtak");
+//        
+//        int result = studentDao.insert(student);
+//        System.out.println("Student added: "+result);
         
-        int result = studentDao.insert(student);
-        System.out.println("Student added: "+result);
+        Student student = new Student();
+        student.setId(123);
+        student.setName("Karan");
+        student.setCity("Dadri");
+        
+        int result = studentDao.change(student);
+        System.out.println("Data changed: "+result);
     }
 }
